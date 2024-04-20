@@ -6,6 +6,7 @@ import {
   HiOutlineEyeOff,
 } from "react-icons/hi";
 import computer from "../../public/Group 1078.svg";
+import { NavLink } from "react-router-dom";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -116,13 +117,15 @@ const LoginForm = () => {
                 </span>
               </label>
             </div>
-            <button
-              type="submit"
-              className={`w-full rounded-md bg-[#0067F4] px-4 py-2 font-bold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 ${!isFormValid() && "cursor-not-allowed opacity-50"}`}
-              disabled={!isFormValid()}
-            >
-              Войти
-            </button>
+            <NavLink to="/dashboard">
+              <button
+                type="submit"
+                className={`w-full rounded-md bg-[#0067F4] px-4 py-2 font-bold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 ${!isFormValid() && "cursor-not-allowed opacity-50"}`}
+                disabled={!isFormValid()}
+              >
+                Войти
+              </button>
+            </NavLink>
           </form>
         </div>
       </div>
