@@ -19,7 +19,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-[#DCE9F9]">
+    <div className="flex w-full items-center justify-center bg-white">
       <div className="fixed left-0 top-0 flex h-full w-14  flex-col items-center justify-between border-r-2 bg-white p-5">
         <div className="mt-4 flex w-10 flex-col items-center rounded-lg bg-[#717377] p-3">
           <button
