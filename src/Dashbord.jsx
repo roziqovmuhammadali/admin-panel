@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex items-center justify-center bg-[#DCE9F9]">
-      <div className="fixed left-0 top-0 flex h-full w-14  flex-col items-center justify-between bg-gray-800 p-5">
+      <div className="fixed left-0 top-0 flex h-full w-14  flex-col items-center justify-between border-r-2 bg-white p-5">
         <div className="mt-4 flex w-10 flex-col items-center rounded-lg bg-[#717377] p-3">
           <button
             className={`mb-4 text-lg text-white ${selectedOption === "DataTable" ? "text-blue-500" : ""}`}
@@ -48,24 +48,24 @@ const Dashboard = () => {
           </button>
         </div>
         <div className="mb-4 flex flex-col items-center gap-5">
-          <button className="text-lg text-white">
+          <button className="text-lg ">
             <IoIosNotifications />
           </button>
-          <button className="text-lg text-white">
+          <button className="text-lg ">
             <IoSettingsSharp />
           </button>
-          <button className="text-lg text-white">
+          <button className="text-lg ">
             <Avatar alt="Remy Sharp" src="/public/avatar.jpg" />
           </button>
         </div>
       </div>
-      <div className="flex w-[90%] items-center justify-center">
+      <div className="flex w-[90%] items-center justify-center pb-5">
         {selectedOption && (
           <div className="w-full">
             {selectedOption === "DataTable" && <DataTable />}
             {selectedOption === "LoginForm" && <LoginForm />}
             <button
-              className="text-blue"
+              className="text-blue-700 "
               onClick={() => setSelectedOption(null)}
             >
               Close

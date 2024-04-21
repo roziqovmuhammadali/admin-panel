@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import nomer from "../../public/n.svg";
+import DataNavbar from "./DataNavbar";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -36,7 +36,15 @@ const rows = [
 
 export default function DataTable() {
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div
+      style={{
+        width: "100%",
+        background: "white",
+        margin: "10px",
+        padding: "10px",
+      }}
+    >
+      <DataNavbar />
       <DataGrid
         rows={rows}
         columns={columns}
