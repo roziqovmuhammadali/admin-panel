@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import LoginForm from "./LoginPages/LoginForm";
+import DataTable from "./components/DataTable";
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -19,7 +21,7 @@ const Dashboard = () => {
           </button>
           <button
             className={`mb-4 text-lg text-white ${selectedOption === "option2" ? "bg-blue-500" : ""}`}
-            onClick={() => handleOptionClick("option2")}
+            onClick={() => handleOptionClick(<DataTable />)}
           >
             Option 2
           </button>
@@ -31,7 +33,7 @@ const Dashboard = () => {
           </button>
           <button
             className={`mb-4 text-lg text-white ${selectedOption === "option4" ? "bg-blue-500" : ""}`}
-            onClick={() => handleOptionClick("option4")}
+            onClick={() => handleOptionClick(<LoginForm />)}
           >
             Option 4
           </button>
@@ -41,7 +43,7 @@ const Dashboard = () => {
           <button className="text-lg text-white">Logout</button>
         </div>
       </div>
-      <div className="flex h-[200px] w-[600px] items-center justify-center ">
+      <div className="flex w-full items-center justify-center ">
         {selectedOption && (
           <div className=" text-blue to-blue-600 p-4">
             <p>You selected: {selectedOption}</p>
