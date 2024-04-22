@@ -59,17 +59,11 @@ const Dashboard = () => {
           </button>
         </div>
       </div>
-      <div className="flex w-[90%] items-center justify-center pb-5">
+      <div className="flex w-[95%] items-center justify-center">
         {selectedOption && (
           <div className="w-full">
             {selectedOption === "DataTable" && <DataTable />}
             {selectedOption === "LoginForm" && <LoginForm />}
-            <button
-              className="text-blue-700 "
-              onClick={() => setSelectedOption(null)}
-            >
-              Close
-            </button>
           </div>
         )}
       </div>

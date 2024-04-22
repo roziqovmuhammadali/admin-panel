@@ -2,19 +2,21 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import DataNavbar from "./DataNavbar";
 
+// http://localhost:3000/datagrid   (http://localhost:3000 map uchun
+
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "firstName", headerName: "First name", width: 130 },
-  { field: "lastName", headerName: "Last name", width: 130 },
-  {
-    field: "age",
-    headerName: "Age",
-    type: "number",
-    width: 90,
-  },
+  { field: "id", headerName: "№", width: 70 },
+  { field: "firstName", headerName: "Клиент", width: 130 },
+  { field: "lastName", headerName: "Ид.заказа", width: 130 },
+  { field: "Таймер", headerName: "Таймер", width: 150 },
+
+  { field: "Филиал", headerName: "Филиал", width: 90 },
+  { field: "Курьер", headerName: "Курьер", width: 90 },
+  { field: "доставки", headerName: "Тип доставки", width: 130 },
+  { field: "заказа", headerName: "Цена заказа", width: 160 },
   {
     field: "fullName",
-    headerName: "Full name",
+    headerName: "Адресс клиента",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
     width: 160,
@@ -40,22 +42,76 @@ export default function DataTable() {
       style={{
         width: "100%",
         background: "white",
-        margin: "10px",
-        padding: "10px",
+        marginLeft: "10px",
+        marginRight: "10px",
+
+        marginBottom: "10px",
+        padding: "6px",
+        background: "#DCE9F9",
       }}
     >
       <DataNavbar />
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
+      <div className="mt-[20px] w-full bg-white ">
+        <div>
+          <ul className="mb-2 flex w-full items-center gap-8 px-4 py-5 font-medium text-[#6E8BB7]">
+            <li>
+              Курьер в пути
+              <span className="ml-2 h-[24px] w-[24px] rounded-[50%]  bg-[#92A8C9] p-1">
+                12
+              </span>
+            </li>
+            <li>
+              Новый
+              <span className=" ml-2 h-[24px] w-[35px] rounded-[50%]  bg-[#92A8C9] p-1">
+                12
+              </span>
+            </li>
+            <li>
+              Оператор принял
+              <span className="ml-2 h-[24px] w-[24px] rounded-[50%]  bg-[#92A8C9] p-1">
+                12
+              </span>
+            </li>
+            <li>
+              Загатовка
+              <span className="ml-2 h-[24px] w-[24px] rounded-[50%] bg-[#92A8C9] p-1">
+                12
+              </span>
+            </li>
+            <li>
+              Завершен
+              <span className="ml-2 h-[24px] w-[24px] rounded-[50%] bg-[#92A8C9] p-1">
+                12
+              </span>
+            </li>
+            <li>
+              Все заказы
+              <span className="ml-2 h-[24px] w-[24px] rounded-[50%] bg-[#92A8C9] p-1">
+                12
+              </span>
+            </li>
+          </ul>
+          <hr className="ml-3 w-[97%] pb-3" />
+        </div>
+        <DataGrid
+          style={{
+            marginLeft: "10px",
+            marginRight: "10px",
+
+            marginBottom: "10px",
+            background: "white",
+          }}
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+      </div>
     </div>
   );
 }
